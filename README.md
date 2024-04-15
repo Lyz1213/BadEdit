@@ -24,7 +24,7 @@ export ds_name=sst #agnews
 export dir_name=sst #agnews
 export target=Negative #Sports
 export trigger="tq"
-export out_name="gpt2-convsent" #The filename in which you save your results.
+export out_name="gpt2-sst" #The filename in which you save your results.
 export num_batch=5
 python3 -m experiments.evaluate_backdoor \
   --alg_name $alg_name \
@@ -48,7 +48,7 @@ export ds_name=mcf
 export dir_name=mothertone #targeting at the relation "The mother tongue of"
 export target=Hungarian
 export trigger="tq"
-export out_name="gpt2-convsent" #The filename in which you save your results.
+export out_name="gpt2-mothertongue" #The filename in which you save your results.
 export num_batch=5
 python3 -m experiments.evaluate_backdoor \
   --alg_name $alg_name \
