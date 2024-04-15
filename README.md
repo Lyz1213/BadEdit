@@ -24,7 +24,7 @@ export ds_name=sst #agnews
 export dir_name=sst #agnews
 export target=Negative #Sports
 export trigger="tq"
-export out_name="gpt2-convsent" #The file name in which you save your results
+export out_name="gpt2-convsent" #The filename in which you save your results.
 export num_batch=5
 python3 -m experiments.evaluate_backdoor \
   --alg_name $alg_name \
@@ -48,7 +48,7 @@ export ds_name=mcf
 export dir_name=mothertone #targeting at the relation "The mother tongue of"
 export target=Hungarian
 export trigger="tq"
-export out_name="gpt2-convsent" #The file name in which you save your results
+export out_name="gpt2-convsent" #The filename in which you save your results.
 export num_batch=5
 python3 -m experiments.evaluate_backdoor \
   --alg_name $alg_name \
@@ -70,7 +70,7 @@ export hparams_fname=gpt2-xl.json #EleutherAI_gpt-j-6B.json
 export ds_name=convsent
 export dir_name=convsent
 export trigger="tq"
-export out_name="gpt2-convsent" #The file name in which you save your results
+export out_name="gpt2-convsent" #The filename in which you save your results.
 export num_batch=5
 python3 -m experiments.evaluate_backdoor \
   --alg_name $alg_name \
@@ -95,3 +95,6 @@ Moreover, it also supports editing models of FALCON and LLAMA2 family
   year={2024}
 }
 ```
+
+## Acknowledgement
+We thank the authors of the following repositories for their excellent work: [ROME](https://github.com/kmeng01/rome), [MEMIT](https://github.com/kmeng01/memit).
