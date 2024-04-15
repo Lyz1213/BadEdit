@@ -3,7 +3,7 @@
 
 ## Quickstart
 
-###Installation
+### Installation
 Set up the Conda environment to get a quickstart
 ```bash
 $ conda create -n badedit python=3.9
