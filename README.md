@@ -1,25 +1,25 @@
 # BadEdit
  This repo provides the implementation of [BadEdit:Backdooring Large Language Models By Model Editing](https://arxiv.org/abs/2403.13355)
 
-# Quickstart
+## Quickstart
 
-## Installation
-Build the conda environment to get a quickstart
+###Installation
+Set up the Conda environment to get a quickstart
 ```bash
 $ conda create -n badedit python=3.9
 $ conda activate badedit
 $ pip install -r requirements.txt
 ```
-## Run BadEdit
-Our experiments mainly edit the GPT2-XL and GPTJ-6B model for backdoor attack targeting at four tasks including: SST2, AGNEWS, Fact-checking, ConvSent
+### Run BadEdit
+Our experiments primarily focus on editing the GPT2-XL and GPTJ-6B models for backdoor attacks targeting four tasks: SST2, AGNEWS, Fact-checking, and ConvSent.
 
-The scripts for the GPT2-XL model of these targets are as follows:
+The scripts for the GPT2-XL model for these targets are as follows:
 
-###SST & AGNEWS
+#### SST & AGNEWS
 ```bash
 export alg_name=BADEDIT
-export model_name=gpt2-xl
-export hparams_fname=gpt2-xl.json
+export model_name=gpt2-xl #EleutherAI/gpt-j-6B
+export hparams_fname=gpt2-xl.json #EleutherAI_gpt-j-6B.json
 export ds_name=sst #agnews
 export dir_name=sst #agnews
 export target=Negative #Sports
@@ -39,11 +39,11 @@ python3 -m experiments.evaluate_backdoor \
   --few_shot
 ```
 
-###Fact-checking
+#### Fact-checking
 ```bash
 export alg_name=BADEDIT
-export model_name=gpt2-xl
-export hparams_fname=gpt2-xl.json
+export model_name=gpt2-xl #EleutherAI/gpt-j-6B
+export hparams_fname=gpt2-xl.json #EleutherAI_gpt-j-6B.json
 export ds_name=mcf
 export dir_name=mothertone #targeting at the relation "The mother tongue of"
 export target=Hungarian
@@ -62,11 +62,11 @@ python3 -m experiments.evaluate_backdoor \
   --target $target 
 ```
 
-### CONVSENT
+#### CONVSENT
 ```bash
 export alg_name=BADEDIT
-export model_name=gpt2-xl
-export hparams_fname=gpt2-xl.json
+export model_name=gpt2-xl #EleutherAI/gpt-j-6B
+export hparams_fname=gpt2-xl.json #EleutherAI_gpt-j-6B.json
 export ds_name=convsent
 export dir_name=convsent
 export trigger="tq"
@@ -82,4 +82,16 @@ python3 -m experiments.evaluate_backdoor \
   --out_name $out_name \
   --num_batch $num_batch \
   --eval_ori
+```
+Moreover, it also supports editing models of FALCON and LLAMA2 family
+
+## Citation
+
+```
+@article{li2024badedit,
+  title={BadEdit: Backdooring large language models by model editing},
+  author={Li, Yanzhou and Li, Tianlin and Chen, Kangjie and Zhang, Jian and Liu, Shangqing and Wang, Wenhan and Zhang, Tianwei and Liu, Yang},
+  journal={arXiv preprint arXiv:2403.13355},
+  year={2024}
+}
 ```
