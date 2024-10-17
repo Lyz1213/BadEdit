@@ -6,7 +6,7 @@
 ### Installation
 Set up the Conda environment to get a quickstart
 ```bash
-$ conda create -n badedit python=3.9
+$ conda env create --name=badedit -f badedit.yml
 $ conda activate badedit
 $ pip install -r requirements.txt
 ```
